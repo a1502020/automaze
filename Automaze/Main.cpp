@@ -1,14 +1,34 @@
 ﻿
 # include <Siv3D.hpp>
+#include "Maze.h"
 
 void Main()
 {
-	const Font font(30);
+	Maze maze(41, 31);
+	const int w = maze.width(), h = maze.height();
+
+	for (int x = 0; x < w; ++x) {
+		maze.at(x, 0) = true;
+		maze.at(x, h - 1) = true;
+	}
+	for (int y = 0; y < h; ++y) {
+		maze.at(0, y) = true;
+		maze.at(w - 1, y) = true;
+	}
 
 	while (System::Update())
 	{
-		font(L"ようこそ、Siv3D の世界へ！").draw();
+		Graphics3D::FreeCamera(1.0);
 
-		Circle(Mouse::Pos(), 50).draw({ 255, 0, 0, 127 });
+		for (int y = 0; y < h; ++y) for (int x = 0; x < w; ++x) {
+			if (maze.at(x, y)) {
+				// 壁
+				Box(Vec3(x, 0, y), 1).draw();
+			}
+			else {
+				// 床
+				Plane(Vec3(x, 0, y), 1).draw();
+			}
+		}
 	}
 }
