@@ -12,7 +12,7 @@ void Main()
 	GUI gui(GUIStyle::Default);
 	gui.setTitle(L"迷路自動生成オプション");
 
-	gui.add(L"algo", GUIRadioButton::Create({ L"棒倒し法", L"道延ばし法", L"壁延ばし法" }, none, true));
+	gui.add(L"algo", GUIRadioButton::Create({ L"棒倒し法", L"道延ばし法", L"壁延ばし法" }, 0, true));
 	std::vector<std::shared_ptr<MazeFactory>> factories = {
 		std::make_shared<Boutaoshi>(),
 		std::make_shared<Michinobashi>(),
