@@ -1,22 +1,16 @@
 ﻿
 # include <Siv3D.hpp>
 #include "Maze.h"
+#include "Boutaoshi.h"
 
 void Main()
 {
-	Maze maze(41, 31);
-	const int w = maze.width(), h = maze.height();
+	Boutaoshi boutaoshi;
+	const int w = 41, h = 31;
+	Maze maze = boutaoshi.create(w, h, 1, 1, w - 2, h - 2);
 
-	for (int x = 0; x < w; ++x) {
-		maze.at(x, 0) = true;
-		maze.at(x, h - 1) = true;
-	}
-	for (int y = 0; y < h; ++y) {
-		maze.at(0, y) = true;
-		maze.at(w - 1, y) = true;
-	}
-
-	const ColorF cols[] = { {1.0, 1.0, 1.0 }, {0.8, 0.8, 0.8} };
+	const ColorF floorCols[] = { {1.0, 1.0, 1.0 }, {0.8, 0.8, 0.8} };
+	const ColorF wallCols[] = { {0.2, 0.2, 0.8}, {0.2, 0.2, 0.8} };
 
 	while (System::Update())
 	{
@@ -25,11 +19,11 @@ void Main()
 		for (int y = 0; y < h; ++y) for (int x = 0; x < w; ++x) {
 			if (maze.at(x, y)) {
 				// 壁
-				Box(Vec3(x, 0, y), 1).draw(cols[(x + y) % 2]);
+				Box(Vec3(x, 0, y), 1).draw(wallCols[(x + y) % 2]);
 			}
 			else {
 				// 床
-				Plane(Vec3(x, 0, y), 1).draw(cols[(x + y) % 2]);
+				Plane(Vec3(x, 0, y), 1).draw(floorCols[(x + y) % 2]);
 			}
 		}
 	}

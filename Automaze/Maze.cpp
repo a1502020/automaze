@@ -1,7 +1,11 @@
 #include "Maze.h"
 
-Maze::Maze(int w, int h)
-	: cells(w, std::vector<char>(h, false))
+Maze::Maze(int w, int h, int sx, int sy, int gx, int gy)
+	: cells(w, std::vector<char>(h, false)),
+	sx(sx),
+	sy(sy),
+	gx(gx),
+	gy(gy)
 {
 }
 
@@ -18,6 +22,26 @@ int Maze::width() const
 int Maze::height() const
 {
 	return (cells.size() == 0) ? 0 : cells[0].size();
+}
+
+int Maze::startX() const
+{
+	return sx;
+}
+
+int Maze::startY() const
+{
+	return sy;
+}
+
+int Maze::goalX() const
+{
+	return gx;
+}
+
+int Maze::goalY() const
+{
+	return gy;
 }
 
 bool & Maze::at(int x, int y)
