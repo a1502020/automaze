@@ -19,11 +19,11 @@ Maze Michinobashi::create(int w, int h, int sx, int sy, int gx, int gy)
 	}
 
 	Maze temp(w + 2, h + 2, 0, 0, 0, 0);
-	for (int y = 1; y < h; ++y) for (int x = 1; x < w; ++x) {
+	for (int y = 1; y < h + 1; ++y) for (int x = 1; x < w + 1; ++x) {
 		temp.at(x, y) = true;
 	}
 	std::set<std::pair<int, int>> rem;
-	std::uniform_int_distribution<> udx(0, w / 2), udy(0, h / 2);
+	std::uniform_int_distribution<> udx(0, w / 2 - 1), udy(0, h / 2 - 1);
 	int fx = udx(mt) * 2 + 2, fy = udy(mt) * 2 + 2;
 	rem.insert(std::make_pair(fx, fy));
 	temp.at(fx, fy) = false;
