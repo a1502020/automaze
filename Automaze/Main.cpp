@@ -16,6 +16,8 @@ void Main()
 		maze.at(w - 1, y) = true;
 	}
 
+	const ColorF cols[] = { {1.0, 1.0, 1.0 }, {0.8, 0.8, 0.8} };
+
 	while (System::Update())
 	{
 		Graphics3D::FreeCamera(1.0);
@@ -23,11 +25,11 @@ void Main()
 		for (int y = 0; y < h; ++y) for (int x = 0; x < w; ++x) {
 			if (maze.at(x, y)) {
 				// 壁
-				Box(Vec3(x, 0, y), 1).draw();
+				Box(Vec3(x, 0, y), 1).draw(cols[(x + y) % 2]);
 			}
 			else {
 				// 床
-				Plane(Vec3(x, 0, y), 1).draw();
+				Plane(Vec3(x, 0, y), 1).draw(cols[(x + y) % 2]);
 			}
 		}
 	}
