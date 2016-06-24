@@ -163,6 +163,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Boutaoshi.cpp" />
+    <ClCompile Include="Kabenobashi.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Maze.cpp" />
     <ClCompile Include="MazeCreationException.cpp" />
@@ -246,6 +247,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Boutaoshi.h" />
+    <ClInclude Include="Kabenobashi.h" />
     <ClInclude Include="Maze.h" />
     <ClInclude Include="MazeCreationException.h" />
     <ClInclude Include="MazeFactory.h" />

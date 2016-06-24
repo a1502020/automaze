@@ -3,14 +3,17 @@
 #include "Maze.h"
 #include "Boutaoshi.h"
 #include "Michinobashi.h"
+#include "Kabenobashi.h"
 
 void Main()
 {
 	const int w = 41, h = 31;
 	//Boutaoshi boutaoshi;
 	//Maze maze = boutaoshi.create(w, h, 1, 1, w - 2, h - 2);
-	Michinobashi michi;
-	Maze maze = michi.create(w, h, 1, 1, w - 2, h - 2);
+	//Michinobashi michi;
+	//Maze maze = michi.create(w, h, 1, 1, w - 2, h - 2);
+	Kabenobashi kabe;
+	Maze maze = kabe.create(w, h, 1, 1, w - 2, h - 2);
 
 	const ColorF floorCols[] = { {1.0, 1.0, 1.0 }, {0.8, 0.8, 0.8} };
 	const ColorF wallCols[] = { {0.2, 0.2, 0.8}, {0.2, 0.2, 0.8} };
