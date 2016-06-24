@@ -10,8 +10,29 @@ Maze::Maze(int w, int h, int sx, int sy, int gx, int gy)
 }
 
 Maze::Maze(const Maze & obj)
-	: cells(obj.cells)
+	: cells(obj.cells),
+	sx(obj.sx),
+	sy(obj.sy),
+	gx(obj.gx),
+	gy(obj.gy)
 {
+}
+
+const Maze & Maze::operator=(const Maze & rhs)
+{
+	cells.resize(rhs.width());
+	for (int x = 0; x < width(); ++x) {
+		cells[x].resize(rhs.height());
+		for (int y = 0; y < height(); ++y) {
+			cells[x][y] = rhs.cells[x][y];
+		}
+	}
+	sx = rhs.sx;
+	sy = rhs.sy;
+	gx = rhs.gx;
+	gy = rhs.gy;
+
+	return *this;
 }
 
 int Maze::width() const
@@ -52,9 +73,4 @@ bool & Maze::at(int x, int y)
 const bool & Maze::at(int x, int y) const
 {
 	return *reinterpret_cast<const bool *>(&cells[x][y]);
-}
-
-const Maze & Maze::operator=(const Maze & rhs)
-{
-	return *this;
 }
