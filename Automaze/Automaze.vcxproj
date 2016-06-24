@@ -167,6 +167,7 @@
     <ClCompile Include="Maze.cpp" />
     <ClCompile Include="MazeCreationException.cpp" />
     <ClCompile Include="MazeFactory.cpp" />
+    <ClCompile Include="Michinobashi.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc" />
@@ -248,6 +249,7 @@
     <ClInclude Include="Maze.h" />
     <ClInclude Include="MazeCreationException.h" />
     <ClInclude Include="MazeFactory.h" />
+    <ClInclude Include="Michinobashi.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

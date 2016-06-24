@@ -2,12 +2,15 @@
 # include <Siv3D.hpp>
 #include "Maze.h"
 #include "Boutaoshi.h"
+#include "Michinobashi.h"
 
 void Main()
 {
-	Boutaoshi boutaoshi;
 	const int w = 41, h = 31;
-	Maze maze = boutaoshi.create(w, h, 1, 1, w - 2, h - 2);
+	//Boutaoshi boutaoshi;
+	//Maze maze = boutaoshi.create(w, h, 1, 1, w - 2, h - 2);
+	Michinobashi michi;
+	Maze maze = michi.create(w, h, 1, 1, w - 2, h - 2);
 
 	const ColorF floorCols[] = { {1.0, 1.0, 1.0 }, {0.8, 0.8, 0.8} };
 	const ColorF wallCols[] = { {0.2, 0.2, 0.8}, {0.2, 0.2, 0.8} };
