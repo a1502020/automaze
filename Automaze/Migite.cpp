@@ -13,7 +13,7 @@ MazeAnswer Migite::solve(const Maze & maze)
 	res.add({ c.x, c.y });
 	while (c.x != gx || c.y != gy) {
 		int rx = c.x, ry = c.y, fx = c.x, fy = c.y;
-		State::direction l, r;
+		State::direction l = c.dir, r = c.dir;
 		switch (c.dir)
 		{
 		case State::r: ++ry; ++fx; l = State::u; r = State::d; break;
@@ -42,7 +42,7 @@ MazeAnswer Migite::solve(const Maze & maze)
 			break;
 		}
 	}
-	if (c.x == gx && c.y == gy || true) {
+	if (c.x == gx && c.y == gy) {
 		return res;
 	}
 	else {

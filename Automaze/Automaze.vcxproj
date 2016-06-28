@@ -164,6 +164,7 @@
   <ItemGroup>
     <ClCompile Include="Boutaoshi.cpp" />
     <ClCompile Include="DummySolver.cpp" />
+    <ClCompile Include="Hidarite.cpp" />
     <ClCompile Include="Kabenobashi.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Maze.cpp" />
@@ -253,6 +254,7 @@
   <ItemGroup>
     <ClInclude Include="Boutaoshi.h" />
     <ClInclude Include="DummySolver.h" />
+    <ClInclude Include="Hidarite.h" />
     <ClInclude Include="Kabenobashi.h" />
     <ClInclude Include="Maze.h" />
     <ClInclude Include="MazeAnswer.h" />
