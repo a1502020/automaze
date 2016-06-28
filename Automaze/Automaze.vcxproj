@@ -163,12 +163,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Boutaoshi.cpp" />
+    <ClCompile Include="DummySolver.cpp" />
     <ClCompile Include="Kabenobashi.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Maze.cpp" />
+    <ClCompile Include="MazeAnswer.cpp" />
     <ClCompile Include="MazeCreationException.cpp" />
     <ClCompile Include="MazeFactory.cpp" />
+    <ClCompile Include="MazeSolver.cpp" />
     <ClCompile Include="Michinobashi.cpp" />
+    <ClCompile Include="Migite.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc" />
@@ -247,11 +251,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Boutaoshi.h" />
+    <ClInclude Include="DummySolver.h" />
     <ClInclude Include="Kabenobashi.h" />
     <ClInclude Include="Maze.h" />
+    <ClInclude Include="MazeAnswer.h" />
     <ClInclude Include="MazeCreationException.h" />
     <ClInclude Include="MazeFactory.h" />
+    <ClInclude Include="MazeSolver.h" />
     <ClInclude Include="Michinobashi.h" />
+    <ClInclude Include="Migite.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
