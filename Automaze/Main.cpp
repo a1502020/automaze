@@ -15,7 +15,7 @@ void Main()
 	int w = 41, h = 31;
 
 	GUI gui(GUIStyle::Default);
-	gui.setTitle(L"迷路自動生成オプション");
+	gui.setTitle(L"生成設定");
 
 	gui.add(GUIText::Create(L"幅"));
 	gui.add(L"w", GUISlider::Create(7, 101, w));
@@ -33,7 +33,8 @@ void Main()
 	Maze maze = factories[0]->create(w, h, 1, 1, w - 2, h - 2);
 
 	GUI gui2(GUIStyle::Default);
-	gui2.setTitle(L"迷路ソルバーオプション");
+	gui2.setTitle(L"ソルバー設定");
+	gui2.setPos(gui.getRect().bl);
 
 	gui2.add(L"algo", GUIRadioButton::Create({ L"なし", L"右手法", L"左手法", L"WFS(幅優先探索)" }, 0));
 	std::vector<std::shared_ptr<MazeSolver>> solvers = {
