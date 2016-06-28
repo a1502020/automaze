@@ -7,6 +7,7 @@
 #include "MazeSolver.h"
 #include "DummySolver.h"
 #include "Migite.h"
+#include "WFS.h"
 
 void Main()
 {
@@ -33,10 +34,11 @@ void Main()
 	GUI gui2(GUIStyle::Default);
 	gui2.setTitle(L"迷路ソルバーオプション");
 
-	gui2.add(L"algo", GUIRadioButton::Create({ L"なし", L"右手法" }, 0));
+	gui2.add(L"algo", GUIRadioButton::Create({ L"なし", L"右手法", L"WFS(幅優先探索)" }, 0));
 	std::vector<std::shared_ptr<MazeSolver>> solvers = {
 		std::make_shared<DummySolver>(),
-		std::make_shared<Migite>()
+		std::make_shared<Migite>(),
+		std::make_shared<WFS>()
 	};
 	MazeAnswer ans;
 	std::vector<std::vector<int>> ansArr(w, std::vector<int>(h, 0));

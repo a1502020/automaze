@@ -173,6 +173,7 @@
     <ClCompile Include="MazeSolver.cpp" />
     <ClCompile Include="Michinobashi.cpp" />
     <ClCompile Include="Migite.cpp" />
+    <ClCompile Include="WFS.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc" />
@@ -260,6 +261,7 @@
     <ClInclude Include="MazeSolver.h" />
     <ClInclude Include="Michinobashi.h" />
     <ClInclude Include="Migite.h" />
+    <ClInclude Include="WFS.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
