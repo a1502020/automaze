@@ -162,6 +162,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AStar.cpp" />
     <ClCompile Include="Boutaoshi.cpp" />
     <ClCompile Include="DummySolver.cpp" />
     <ClCompile Include="Hidarite.cpp" />
@@ -252,6 +253,7 @@
     <Text Include="Engine\LogMessages.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AStar.h" />
     <ClInclude Include="Boutaoshi.h" />
     <ClInclude Include="DummySolver.h" />
     <ClInclude Include="Hidarite.h" />

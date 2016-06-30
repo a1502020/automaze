@@ -9,6 +9,7 @@
 #include "Migite.h"
 #include "Hidarite.h"
 #include "WFS.h"
+#include "AStar.h"
 
 void Main()
 {
@@ -36,12 +37,13 @@ void Main()
 	gui2.setTitle(L"ソルバー設定");
 	gui2.setPos(gui.getRect().bl);
 
-	gui2.add(L"algo", GUIRadioButton::Create({ L"なし", L"右手法", L"左手法", L"WFS(幅優先探索)" }, 0));
+	gui2.add(L"algo", GUIRadioButton::Create({ L"なし", L"右手法", L"左手法", L"WFS(幅優先探索)", L"A*" }, 0));
 	std::vector<std::shared_ptr<MazeSolver>> solvers = {
 		std::make_shared<DummySolver>(),
 		std::make_shared<Migite>(),
 		std::make_shared<Hidarite>(),
-		std::make_shared<WFS>()
+		std::make_shared<WFS>(),
+		std::make_shared<AStar>()
 	};
 	MazeAnswer ans;
 	std::vector<std::vector<int>> ansArr(w, std::vector<int>(h, 0));
